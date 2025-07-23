@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reservations | Bon Appétit</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Bon Appétit</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="booking.html">Book</a>
+      <a href="contact.html">Contact</a>
+      <a href="reservations.html">Admin</a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main class="admin">
+    <h1>All Reservations</h1>
+    <table id="resTable">
+      <thead>
+        <tr>
+          <th>Name</th><th>Email</th><th>Date</th><th>Time</th><th>Guests</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer><p>&copy; 2025 Bon Appétit.</p></footer>
+  <script src="js/main.js"></script>
+  <script>
+    const tableBody = document.querySelector("#resTable tbody");
+    const reservations = JSON.parse(localStorage.getItem("reservations") || "[]");
+
+    reservations.forEach(r => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${r.name}</td><td>${r.email}</td><td>${r.date}</td><td>${r.time}</td><td>${r.guests}</td>`;
+      tableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
