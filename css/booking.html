@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Table | Bon Appétit</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Bon Appétit</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="booking.html">Book</a>
+      <a href="contact.html">Contact</a>
+      <a href="reservations.html">Admin</a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main class="booking-form">
+    <h1>Reserve Your Table</h1>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+      <input type="number" id="guests" min="1" max="12" placeholder="Number of Guests" required />
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bon Appétit.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
