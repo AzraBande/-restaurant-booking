@@ -44,3 +44,18 @@
   </script>
 </body>
 </html>
+<main class="admin">
+  <h1>All Reservations</h1>
+  <table><thead><tr><th>Name</th><th>Email</th><th>Date</th><th>Time</th><th>Guests</th></tr></thead>
+    <tbody id="resTableBody"></tbody>
+  </table>
+</main>
+<script src="js/main.js"></script>
+<script>
+const tbody = document.getElementById('resTableBody');
+(JSON.parse(localStorage.getItem('reservations')||'[]')).forEach(r => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${r.name}</td><td>${r.email}</td><td>${r.date}</td><td>${r.time}</td><td>${r.guests}</td>`;
+  tbody.appendChild(tr);
+});
+</script>
